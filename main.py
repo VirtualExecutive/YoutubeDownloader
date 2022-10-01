@@ -9,14 +9,14 @@ import moviepy.editor as moviepy
 
 # cleaning files
 try:
-    os.remove("output.webm")
+    os.remove("output.%(ext)s")
 except:
     pass
 
 
 url = ""
 type("")
-while "youtube" in url:
+while "youtube" not in url:
     url = input("Youtube link: ")
     if "youtube" not in url:
         print("Please enter youtube link.")
@@ -28,5 +28,8 @@ ydl_opts = {
 
 with youtube_dl.YoutubeDL(ydl_opts) as ydl:
     ydl.download([url])
-clip = moviepy.AudioFileClip("output.webm")
+clip = moviepy.AudioFileClip("output.m4a")
 clip.write_audiofile("output.mp3")
+
+
+print("Selam")
