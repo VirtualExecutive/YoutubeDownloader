@@ -1,9 +1,4 @@
-import contextlib
-import wave
-import speech_recognition as sr
-import timeit
 import os
-
 import youtube_dl
 import moviepy.editor as moviepy
 
